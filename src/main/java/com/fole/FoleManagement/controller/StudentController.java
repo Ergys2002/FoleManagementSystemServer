@@ -1,7 +1,8 @@
 package com.fole.FoleManagement.controller;
 
-import com.fole.FoleManagement.Entities.Student;
-import com.fole.FoleManagement.Services.StudentService;
+import com.fole.FoleManagement.dto.StudentDTO;
+import com.fole.FoleManagement.entities.Student;
+import com.fole.FoleManagement.services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,10 +19,21 @@ public class StudentController {
     @Autowired
     private StudentService studentService;
 
-    @GetMapping
-    public List<Optional<Student>> getAllStudents() {
-        return studentService.getAllStudents();
+    @GetMapping("/htmlPage")
+    public String redirectStudentPage() {
+        return "redirect:/static/student.html";
     }
+
+    @GetMapping //merr te gjithe studentet aktiv(dto me me pak te dhena)
+    public List<StudentDTO> getAllStudentsDTO() {
+        return studentService.getAllStudentsDTO();
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<Optional<Student>>> getAllActiveStudents(){
+        return new ResponseEntity<>(studentService.getAllActiveStudents(), HttpStatus.OK);
+    }
+
 
     @GetMapping("/{id}")
     public ResponseEntity<Student> getStudentById(@PathVariable String id) {
@@ -41,10 +53,13 @@ public class StudentController {
         return student != null ? ResponseEntity.ok(student) : ResponseEntity.notFound().build();
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteStudent(@PathVariable String id) {
-        studentService.deleteStudent(id);
-        return ResponseEntity.noContent().build();
+    @PutMapping("/delete/{id}")
+    public ResponseEntity<String> deleteStudent(@PathVariable String id) {
+        try {
+            return new ResponseEntity<>(studentService.deleteStudent(id),HttpStatus.OK);
+        }catch (Exception e){
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @PutMapping("/transfero")
@@ -58,5 +73,10 @@ public class StudentController {
     public ResponseEntity<String> hiqNgaDhoma(@RequestParam String id){
         studentService.hiqNgaDhoma(id);
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @GetMapping("/search")
+    public ResponseEntity<List<StudentDTO>> search(String q){
+        return new ResponseEntity<>(studentService.search(q), HttpStatus.OK);
     }
 }

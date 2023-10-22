@@ -1,7 +1,7 @@
-package com.fole.FoleManagement.Services;
+package com.fole.FoleManagement.services;
 
-import com.fole.FoleManagement.Entities.Kontrata;
-import com.fole.FoleManagement.Repositories.KontrataRepository;
+import com.fole.FoleManagement.entities.Kontrata;
+import com.fole.FoleManagement.repositories.KontrataRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

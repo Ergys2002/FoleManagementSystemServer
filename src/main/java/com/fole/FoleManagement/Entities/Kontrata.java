@@ -1,4 +1,4 @@
-package com.fole.FoleManagement.Entities;
+package com.fole.FoleManagement.entities;
 
 import lombok.Data;
 
@@ -13,12 +13,12 @@ public class Kontrata {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer document_id;
 
-    @Column
-    private String student_id;
-
     @Lob
     @Column
     private byte[] pdf_file;
+
+    @Column
+    private String dhoma_id;
 
 }
 

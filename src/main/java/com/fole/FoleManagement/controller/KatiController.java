@@ -1,6 +1,6 @@
 package com.fole.FoleManagement.controller;
 
-import com.fole.FoleManagement.Services.KatiService;
+import com.fole.FoleManagement.services.KatiService;
 import com.fole.FoleManagement.dto.KatiDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

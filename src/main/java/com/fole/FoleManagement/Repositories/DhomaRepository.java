@@ -1,6 +1,6 @@
-package com.fole.FoleManagement.Repositories;
+package com.fole.FoleManagement.repositories;
 
-import com.fole.FoleManagement.Entities.Dhoma;
+import com.fole.FoleManagement.entities.Dhoma;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

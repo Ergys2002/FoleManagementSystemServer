@@ -1,6 +1,6 @@
-package com.fole.FoleManagement.Repositories;
+package com.fole.FoleManagement.repositories;
 
-import com.fole.FoleManagement.Entities.User;
+import com.fole.FoleManagement.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

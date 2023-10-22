@@ -1,10 +1,12 @@
-package com.fole.FoleManagement.Services;
+package com.fole.FoleManagement.services;
 
-import com.fole.FoleManagement.Entities.Dhoma;
-import com.fole.FoleManagement.Entities.Student;
-import com.fole.FoleManagement.Repositories.DhomaRepository;
-import com.fole.FoleManagement.Repositories.StudentRepository;
-import com.fole.FoleManagement.dto.dhomaDTO;
+import com.fole.FoleManagement.entities.Dhoma;
+import com.fole.FoleManagement.entities.Kontrata;
+import com.fole.FoleManagement.entities.Student;
+import com.fole.FoleManagement.repositories.DhomaRepository;
+import com.fole.FoleManagement.repositories.KontrataRepository;
+import com.fole.FoleManagement.repositories.StudentRepository;
+import com.fole.FoleManagement.dto.DhomaDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
@@ -20,6 +22,9 @@ public class DhomaService {
 
     @Autowired
     private StudentRepository studentRepository;
+
+    @Autowired
+    private KontrataRepository kontrataRepository;
 
     public List<Dhoma> dhomaKati(String ndertesa, Integer kati){
         List<Dhoma> dhomaList = dhomaRepository.findAll();
@@ -40,11 +45,12 @@ public class DhomaService {
         return dhomatReturn;
     }
 
-    public dhomaDTO infoDhome(String id){ //dhoma id
+    public DhomaDTO infoDhome(String id){ //dhoma id
         Optional<Dhoma> dhoma = dhomaRepository.findById(id);
         List<Student> studentList = studentRepository.gjejNgaDhomaId(id);
+        Optional<Kontrata> kontrata = kontrataRepository.gjejNgaDhomaId(id);
         //krijon nje objekt dto dhe i vendos te dhenat e dhomes qe e dime qe ekziston
-        dhomaDTO dto = new dhomaDTO
+        DhomaDTO dto = new DhomaDTO
                 (dhoma,
                         //metode qe kthen te tere users qe kane dhoma_id sa id
                         studentList);

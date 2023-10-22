@@ -1,9 +1,8 @@
-package com.fole.FoleManagement.Entities;
+package com.fole.FoleManagement.entities;
 
 import lombok.Data;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 
 @Entity
 @Table(name = "user")
@@ -16,5 +15,5 @@ public class User {
     private String username;
 
     @Column
-    private Integer password;
+    private String password;
 }

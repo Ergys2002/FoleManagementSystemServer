@@ -1,7 +1,7 @@
 package com.fole.FoleManagement.controller;
 
-import com.fole.FoleManagement.Entities.Kontrata;
-import com.fole.FoleManagement.Services.KontrataService;
+import com.fole.FoleManagement.entities.Kontrata;
+import com.fole.FoleManagement.services.KontrataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

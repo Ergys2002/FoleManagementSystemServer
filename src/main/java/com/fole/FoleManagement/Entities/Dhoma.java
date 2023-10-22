@@ -1,4 +1,4 @@
-package com.fole.FoleManagement.Entities;
+package com.fole.FoleManagement.entities;
 
 import lombok.Data;
 

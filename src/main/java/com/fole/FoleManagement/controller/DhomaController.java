@@ -1,8 +1,8 @@
 package com.fole.FoleManagement.controller;
 
-import com.fole.FoleManagement.Entities.Dhoma;
-import com.fole.FoleManagement.Services.DhomaService;
-import com.fole.FoleManagement.dto.dhomaDTO;
+import com.fole.FoleManagement.entities.Dhoma;
+import com.fole.FoleManagement.services.DhomaService;
+import com.fole.FoleManagement.dto.DhomaDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +18,7 @@ public class DhomaController {
     private DhomaService dhomaService;
 
     @GetMapping("/dhoma")
-    public ResponseEntity<dhomaDTO> getInfoById(@RequestParam String id) {
+    public ResponseEntity<DhomaDTO> getInfoById(@RequestParam String id) {
         return new ResponseEntity<>(dhomaService.infoDhome(id), HttpStatus.OK);
     }
 

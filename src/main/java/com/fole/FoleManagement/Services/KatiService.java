@@ -1,12 +1,11 @@
-package com.fole.FoleManagement.Services;
+package com.fole.FoleManagement.services;
 
-import com.fole.FoleManagement.Entities.Dhoma;
-import com.fole.FoleManagement.Repositories.DhomaRepository;
+import com.fole.FoleManagement.entities.Dhoma;
+import com.fole.FoleManagement.repositories.DhomaRepository;
 import com.fole.FoleManagement.dto.KatiDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 

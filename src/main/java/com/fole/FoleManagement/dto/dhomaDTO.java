@@ -1,19 +1,22 @@
 package com.fole.FoleManagement.dto;
 
-import com.fole.FoleManagement.Entities.Dhoma;
-import com.fole.FoleManagement.Entities.Student;
+import com.fole.FoleManagement.entities.Dhoma;
+import com.fole.FoleManagement.entities.Kontrata;
+import com.fole.FoleManagement.entities.Student;
 import lombok.Data;
 
 import java.util.List;
 import java.util.Optional;
 
 @Data
-public class dhomaDTO extends Dhoma {
+public class DhomaDTO extends Dhoma {
     private Integer size;
     private List<Student> students;
+    //todo: add kontrata to dto
+    private Kontrata kontrata;
 
 
-    public dhomaDTO(Optional<Dhoma> dhoma, List<Student> list) {
+    public DhomaDTO(Optional<Dhoma> dhoma, List<Student> list) {
         setId(dhoma.get().getId());
         setZene(dhoma.get().getZene());
         setTipi(dhoma.get().getTipi());
