@@ -48,7 +48,7 @@ public class DhomaService {
     public DhomaDTO infoDhome(String id){ //dhoma id
         Optional<Dhoma> dhoma = dhomaRepository.findById(id);
         List<Student> studentList = studentRepository.gjejNgaDhomaId(id);
-        Optional<Kontrata> kontrata = kontrataRepository.gjejNgaDhomaId(id);
+//        Optional<Kontrata> kontrata = kontrataRepository.gjejNgaDhomaId(id);
         //krijon nje objekt dto dhe i vendos te dhenat e dhomes qe e dime qe ekziston
         DhomaDTO dto = new DhomaDTO
                 (dhoma,

@@ -13,7 +13,7 @@ public class DhomaDTO extends Dhoma {
     private Integer size;
     private List<Student> students;
     //todo: add kontrata to dto
-    private Kontrata kontrata;
+//    private Kontrata kontrata;
 
 
     public DhomaDTO(Optional<Dhoma> dhoma, List<Student> list) {
